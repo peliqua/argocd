@@ -9,7 +9,7 @@ spec:
     namespace: student-9
   project: default
   source:
-    repoURL: <YOUR GITHUB REPO>
+    repoURL: https://github.com/peliqua/argocd
     targetRevision: HEAD
     path: apps
   syncPolicy:
