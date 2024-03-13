@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap-student-<YOURNUMBER>
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: student-<YOURNUMBER>
+  project: default
+  source:
+    repoURL: <YOUR GITHUB REPO>
+    targetRevision: HEAD
+    path: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
